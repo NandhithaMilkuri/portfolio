@@ -1,16 +1,23 @@
-## Hi there 👋
+# Hi, I'm Nandhitha
 
-<!--
-**NandhithaMilkuri/NandhithaMilkuri** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Aspiring Software Developer passionate about building real-world applications.
 
-Here are some ideas to get you started:
+## Skills
+Java
+Python
+SQL
+HTML
+CSS
+JavaScript
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Certifications
+Kaggle Data Vision
+Google AIML (Eduskills)
+Google Android Developer
+Data Science Virtual Internship
+Python Programming
+
+## Projects
+Java Banking System
+Smart Expense Tracker
+Agriculture Farm Management System
