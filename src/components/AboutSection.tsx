@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import profileImg from "@/assets/profile.png";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -26,7 +27,14 @@ const AboutSection = () => {
           >
             <div className="glass-card gradient-border p-2 rounded-2xl">
               <div className="w-full aspect-square rounded-xl bg-secondary flex items-center justify-center overflow-hidden">
-                <div className="text-8xl font-bold gradient-text">NM</div>
+                <img
+                  src={profileImg}
+                  alt="Nandhitha Milkuri"
+                  width={512}
+                  height={512}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </motion.div>
@@ -53,7 +61,7 @@ const AboutSection = () => {
               {[
                 { label: "Projects", value: "3+" },
                 { label: "Internships", value: "3+" },
-                { label: "Certifications", value: "3+" },
+                { label: "Certifications", value: "5+" },
                 { label: "Skills", value: "10+" },
               ].map((stat) => (
                 <div key={stat.label} className="glass-card p-4 rounded-lg text-center">

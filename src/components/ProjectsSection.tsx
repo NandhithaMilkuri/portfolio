@@ -1,32 +1,29 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "AgroConnect Management System",
+    title: "AgriFlow Management System",
     description:
       "A comprehensive agricultural management platform connecting farmers with resources, market data, and expert guidance for better crop management.",
-    tech: ["Python", "JavaScript", "MySQL", "HTML/CSS"],
+    tech: ["HTML5", "CSS3", "JavaScript", "Node.js", "MySQL", "REST API"],
     github: "#",
-    live: "#",
   },
   {
     title: "Elevate Estates",
     description:
-      "A modern real estate platform with property listings, advanced search filters, and a seamless user experience for buyers and sellers.",
-    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+      "A modern real estate frontend platform with property listings, advanced search filters, and a seamless user experience for buyers and sellers.",
+    tech: ["React", "Tailwind CSS", "JavaScript", "HTML5", "CSS3"],
     github: "#",
-    live: "#",
   },
   {
-    title: "Expense Tracker",
+    title: "Bank Application",
     description:
-      "An intuitive expense tracking application that helps users manage finances, categorize spending, and visualize financial data.",
-    tech: ["JavaScript", "HTML", "CSS", "MySQL"],
+      "A robust banking application built with Java featuring account management, transactions, balance tracking, and secure user authentication.",
+    tech: ["Java", "OOPs", "MySQL", "Data Structures"],
     github: "#",
-    live: "#",
   },
 ];
 
@@ -71,14 +68,9 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-3">
-                  <Button variant="heroOutline" size="sm" asChild className="flex-1">
-                    <a href={project.github}><Github size={14} /> Code</a>
-                  </Button>
-                  <Button variant="hero" size="sm" asChild className="flex-1">
-                    <a href={project.live}><ExternalLink size={14} /> Demo</a>
-                  </Button>
-                </div>
+                <Button variant="heroOutline" size="sm" asChild className="w-full">
+                  <a href={project.github}><Github size={14} /> Code</a>
+                </Button>
               </div>
             </motion.div>
           ))}
