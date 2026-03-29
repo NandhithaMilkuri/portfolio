@@ -1,33 +1,41 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Code2, Layout, Database, Wrench } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
+import { Code2, Database, Wrench, BookOpen } from "lucide-react";
 
 const categories = [
   {
-    title: "Languages",
+    title: "Languages & Core",
     icon: Code2,
-    skills: ["Python", "Java", "JavaScript", "HTML", "CSS"],
+    skills: ["SQL", "Java", "Data Structures", "OOPs"],
   },
   {
-    title: "Frameworks & Libraries",
-    icon: Layout,
-    skills: ["React", "Tailwind CSS", "Node.js"],
+    title: "Frontend Development",
+    icon: BookOpen,
+    skills: ["HTML5", "CSS3", "JavaScript", "Responsive Web Design", "UI/UX Design"],
   },
   {
     title: "Databases",
     icon: Database,
-    skills: ["MySQL", "MongoDB"],
+    skills: ["MySQL", "MongoDB", "CRUD Operations", "Data Modeling"],
   },
   {
-    title: "Tools & Platforms",
+    title: "Tools & Technologies",
     icon: Wrench,
-    skills: ["Git", "GitHub", "VS Code", "Azure"],
+    skills: ["Git", "GitHub", "VS Code", "Node.js", "REST API", "RBAC"],
   },
 ];
 
 const SkillsSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % categories.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section id="skills" className="section-padding bg-secondary/20">
@@ -40,26 +48,30 @@ const SkillsSection = () => {
           My <span className="gradient-text">Skills</span>
         </motion.h2>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        {/* Slideshow */}
+        <div className="relative overflow-hidden rounded-xl glass-card gradient-border p-8 min-h-[220px]">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.1 }}
-              className="glass-card gradient-border hover-lift p-6 rounded-xl"
+              initial={false}
+              animate={{
+                opacity: currentSlide === i ? 1 : 0,
+                x: currentSlide === i ? 0 : currentSlide > i ? -60 : 60,
+              }}
+              transition={{ duration: 0.5 }}
+              className={`${currentSlide === i ? "block" : "hidden"}`}
             >
-              <div className="flex items-center gap-3 mb-5">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 rounded-lg bg-primary/10">
-                  <cat.icon size={20} className="text-primary" />
+                  <cat.icon size={22} className="text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg">{cat.title}</h3>
+                <h3 className="font-semibold text-xl">{cat.title}</h3>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {cat.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 text-sm rounded-full bg-secondary text-secondary-foreground font-medium hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
+                    className="px-4 py-2 text-sm rounded-full bg-secondary text-secondary-foreground font-medium hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
                   >
                     {skill}
                   </span>
@@ -67,6 +79,19 @@ const SkillsSection = () => {
               </div>
             </motion.div>
           ))}
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            {categories.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentSlide(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                  currentSlide === i ? "bg-primary" : "bg-muted-foreground/30"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
