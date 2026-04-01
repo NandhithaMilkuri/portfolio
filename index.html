@@ -2,124 +2,124 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nandhitha | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nandhitha | Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Loader -->
-    <div id="loader">
-        <h1>Milkuri Nandhitha</h1>
-    </div>
+<!-- NAVBAR -->
+<header class="navbar">
+<h1>Nandhitha</h1>
 
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#internships">Internships</a>
+<a href="#certifications">Certifications</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-    <!-- Header -->
-    <header>
-        <h1>Milkuri Nandhitha</h1>
+<!-- HERO -->
+<section class="hero">
 
-        <div class="menu-toggle">☰</div>
+<div class="hero-box">
 
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<img src="BlazerPhoto.jpeg" class="profile">
 
-        <button id="theme-toggle">🌙</button>
-    </header>
+<h2>Nandhitha</h2>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <img src="BlazerPhoto.jpeg" class="profile">
+<p class="role">Aspiring Software Developer</p>
 
-        <h2>Hello, I'm Nandhitha 👋</h2>
+<div class="social">
+<a href="https://github.com/NandhithaMilkuri" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/nandhitha-milkuri" target="_blank">LinkedIn</a>
+</div>
 
-        <p id="typing"></p>
+<a href="JPMC_Resume_Final.pdf" class="btn" download>Download Resume</a>
 
-        <button onclick="scrollToProjects()">
-            View Work
-        </button>
+</div>
 
-        <a href="JPMC_Resume_Final.pdf" class="resume" download>
-            Download Resume
-        </a>
-    </section>
+</section>
 
-    <!-- About -->
-    <section id="about" class="fade">
-        <h2>About Me</h2>
+<!-- ABOUT -->
+<section id="about" class="section hidden">
+<h2>About</h2>
+<p>
+Aspiring Software Developer with strong foundations in Python, Java, Web Development, and Database Management.
+Passionate about building real-world applications and seeking entry-level roles.
+</p>
+</section>
 
-        <p>
-            Aspiring Software Developer with strong foundations in Python, Java,
-            Web Development, and Database Management. Passionate about building
-            real-world applications and seeking entry-level roles.
-        </p>
-    </section>
+<!-- PROJECTS -->
+<section id="projects" class="section hidden">
+<h2>Projects</h2>
 
-    <!-- Skills -->
-    <section id="skills" class="fade">
-        <h2>Skills</h2>
+<div class="grid">
 
-        <div class="skill-bar">
+<div class="card">
+<h3>AgroConnect</h3>
+<p>Role-based agricultural management system.</p>
+</div>
 
-            <p>Java</p>
-            <div><span style="width:85%"></span></div>
+<div class="card">
+<h3>Elevate Estates</h3>
+<p>Responsive real estate website.</p>
+</div>
 
-            <p>Python</p>
-            <div><span style="width:85%"></span></div>
+<div class="card">
+<h3>Expense Tracker</h3>
+<p>Track and manage expenses efficiently.</p>
+</div>
 
-            <p>HTML</p>
-            <div><span style="width:90%"></span></div>
+</div>
 
-            <p>CSS</p>
-            <div><span style="width:85%"></span></div>
+</section>
 
-            <p>JavaScript</p>
-            <div><span style="width:80%"></span></div>
+<!-- INTERNSHIPS -->
+<section id="internships" class="section hidden">
+<h2>Internships</h2>
 
-            <p>MySQL</p>
-            <div><span style="width:75%"></span></div>
+<div class="grid">
 
-        </div>
-    </section>
+<div class="card">Data Science - Eduskills</div>
+<div class="card">SQL & DBMS - Eduskills</div>
+<div class="card">AI/ML - Eduskills</div>
 
-    <!-- Projects -->
-    <section id="projects" class="fade">
-        <h2>GitHub Projects</h2>
+</div>
 
-        <div class="projects" id="github-projects">
-            <!-- Auto loaded from GitHub -->
-        </div>
-    </section>
+</section>
 
-    <!-- Contact -->
-    <section id="contact" class="fade">
-        <h2>Contact</h2>
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section hidden">
+<h2>Certifications</h2>
 
-        <p>Email: milkurinandhitha@gmail.com</p>
-        <p>Phone: +91 9849828473</p>
+<div class="grid">
 
-        <p>
-            <a href="https://github.com/NandhithaMilkuri" target="_blank">GitHub</a> |
-            <a href="https://www.linkedin.com/in/nandhitha-milkuri" target="_blank">LinkedIn</a>
-        </p>
-    </section>
+<div class="card">Azure AI Fundamentals</div>
+<div class="card">Data Science Bootcamp</div>
+<div class="card">Full Stack Bootcamp</div>
+<div class="card">Data Visualization</div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Nandhitha</p>
-    </footer>
+</div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script src="script.js"></script>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section hidden">
+<h2>Contact</h2>
+<p>Email: milkurinandhitha@gmail.com</p>
+<p>Phone: +91 9849828473</p>
+</section>
+
+<footer>
+<p>© 2026 Nandhitha</p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
