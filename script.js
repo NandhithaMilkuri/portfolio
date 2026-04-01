@@ -1,39 +1,20 @@
-/* ================================
-   SCROLL REVEAL ANIMATION
-================================ */
-const sections = document.querySelectorAll(".hidden");
-
-window.addEventListener("scroll", () => {
-
-    sections.forEach((section) => {
-
-        const sectionTop = section.getBoundingClientRect().top;
-
-        if (sectionTop < window.innerHeight - 100) {
-            section.classList.add("show");
-        }
-
-    });
-
-});
 
 
-/* ================================
-   SMOOTH SCROLL (NAV LINKS)
-================================ */
-const navLinks = document.querySelectorAll("nav a");
 
-navLinks.forEach((link) => {
+/* =========================
+   SMOOTH SCROLL NAVIGATION
+========================= */
+const links = document.querySelectorAll("nav a");
 
-    link.addEventListener("click", (e) => {
+links.forEach(function(link) {
+
+    link.addEventListener("click", function(e) {
 
         e.preventDefault();
 
-        const targetId = link.getAttribute("href");
+        const target = document.querySelector(this.getAttribute("href"));
 
-        const targetSection = document.querySelector(targetId);
-
-        targetSection.scrollIntoView({
+        target.scrollIntoView({
             behavior: "smooth"
         });
 
@@ -42,26 +23,26 @@ navLinks.forEach((link) => {
 });
 
 
-/* ================================
+/* =========================
    ACTIVE NAV HIGHLIGHT
-================================ */
-const allSections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
+========================= */
+window.addEventListener("scroll", function() {
 
     let current = "";
 
-    allSections.forEach((section) => {
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach(function(section) {
 
         const sectionTop = section.offsetTop;
 
-        if (scrollY >= sectionTop - 150) {
+        if (scrollY >= sectionTop - 100) {
             current = section.getAttribute("id");
         }
 
     });
 
-    navLinks.forEach((link) => {
+    links.forEach(function(link) {
 
         link.classList.remove("active");
 
@@ -72,29 +53,3 @@ window.addEventListener("scroll", () => {
     });
 
 });
-
-
-/* ================================
-   TYPING ANIMATION (RESUME BASED)
-================================ */
-const text = "Aspiring Software Developer";
-let index = 0;
-
-function typingEffect() {
-
-    const typingElement = document.getElementById("typing");
-
-    if (!typingElement) return;
-
-    if (index < text.length) {
-
-        typingElement.innerHTML += text.charAt(index);
-
-        index++;
-
-        setTimeout(typingEffect, 50);
-    }
-
-}
-
-typingEffect();
