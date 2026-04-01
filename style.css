@@ -6,7 +6,7 @@ color:white;
 text-align:center;
 }
 
-/* header */
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
@@ -20,16 +20,13 @@ color:#38bdf8;
 text-decoration:none;
 }
 
-/* hero */
+/* HERO */
 .hero{
-padding:50px;
-}
-
-.profile{
-width:120px;
-height:120px;
-border-radius:50%;
-border:3px solid #38bdf8;
+height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
 
 .role{
@@ -39,28 +36,48 @@ color:#38bdf8;
 .links a{
 margin:10px;
 color:#38bdf8;
-display:inline-block;
 }
 
-/* button */
-.btn{
-display:inline-block;
-margin-top:10px;
-padding:10px;
-border:1px solid #38bdf8;
-color:#38bdf8;
-text-decoration:none;
-}
-
-/* sections */
+/* SECTIONS */
 section{
-padding:40px;
+padding:50px;
 }
 
+h2{
+color:#38bdf8;
+}
+
+/* SKILLS */
+.skills{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.skills div{
+background:#1e293b;
+padding:10px 20px;
+border-radius:20px;
+}
+
+/* CARDS */
 .card{
 background:#1e293b;
 margin:10px auto;
 padding:15px;
 width:250px;
 border-radius:8px;
+}
+
+/* FADE ANIMATION */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:0.8s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
