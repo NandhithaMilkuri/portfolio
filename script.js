@@ -1,4 +1,5 @@
-/* TYPING */
+
+/* typing */
 const text="Hello, I'm Nandhitha 👋";
 let i=0;
 function typing(){
@@ -9,7 +10,7 @@ setTimeout(typing,50);
 }}
 typing();
 
-/* FADE */
+/* fade */
 const faders=document.querySelectorAll(".fade");
 
 window.addEventListener("scroll",()=>{
@@ -20,31 +21,34 @@ el.classList.add("show");
 });
 });
 
-/* SMOOTH SCROLL */
-document.querySelectorAll("nav a").forEach(link=>{
-link.onclick=(e)=>{
-e.preventDefault();
-document.querySelector(link.getAttribute("href"))
-.scrollIntoView({behavior:"smooth"});
-};
-});
+/* projects data */
+const projects=[
+{name:"Elevate Estates",type:"web"},
+{name:"AgroConnect",type:"web"},
+{name:"Fake News Detection ML",type:"ml"},
+{name:"Expense Tracker",type:"ml"}
+];
 
-/* 🔥 GITHUB PROJECTS */
-fetch("https://api.github.com/users/NandhithaMilkuri/repos")
-.then(res=>res.json())
-.then(data=>{
-const container=document.getElementById("github-projects");
-
-data.slice(0,6).forEach(repo=>{
+/* render projects */
+function renderProjects(list){
+const container=document.getElementById("project-container");
+container.innerHTML="";
+list.forEach(p=>{
 const div=document.createElement("div");
 div.className="card";
-
-div.innerHTML=`
-<h3>${repo.name}</h3>
-<p>${repo.description||"No description"}</p>
-<a href="${repo.html_url}" target="_blank">View Code</a>
-`;
-
+div.innerHTML=p.name;
 container.appendChild(div);
 });
-});
+}
+
+/* filter */
+function filterProjects(type){
+if(type==="all"){
+renderProjects(projects);
+}else{
+renderProjects(projects.filter(p=>p.type===type));
+}
+}
+
+/* initial load */
+renderProjects(projects);
