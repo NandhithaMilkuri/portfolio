@@ -1,54 +1,83 @@
 
-/* typing */
-const text="Hello, I'm Nandhitha 👋";
-let i=0;
-function typing(){
-if(i<text.length){
-document.getElementById("typing").innerHTML+=text.charAt(i);
-i++;
-setTimeout(typing,50);
-}}
-typing();
+/* =========================
+   TYPING EFFECT
+========================= */
+const text = "Nandhitha";
+let index = 0;
 
-/* fade */
-const faders=document.querySelectorAll(".fade");
-
-window.addEventListener("scroll",()=>{
-faders.forEach(el=>{
-if(el.getBoundingClientRect().top<window.innerHeight-100){
-el.classList.add("show");
+function typingEffect(){
+    if(index < text.length){
+        document.getElementById("typing-text").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typingEffect, 100);
+    }
 }
+typingEffect();
+
+
+/* =========================
+   SCROLL REVEAL ANIMATION
+========================= */
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
 });
+
+const elements = document.querySelectorAll(
+".section, .project-card, .skill-box, .edu-card, .experience-card, .contact-btn"
+);
+
+elements.forEach(el => {
+    el.classList.add("hidden");
+    observer.observe(el);
 });
 
-/* projects data */
-const projects=[
-{name:"Elevate Estates",type:"web"},
-{name:"AgroConnect",type:"web"},
-{name:"Fake News Detection ML",type:"ml"},
-{name:"Expense Tracker",type:"ml"}
-];
 
-/* render projects */
-function renderProjects(list){
-const container=document.getElementById("project-container");
-container.innerHTML="";
-list.forEach(p=>{
-const div=document.createElement("div");
-div.className="card";
-div.innerHTML=p.name;
-container.appendChild(div);
+/* =========================
+   SMOOTH SCROLL
+========================= */
+document.querySelectorAll("nav a").forEach(link => {
+
+    link.addEventListener("click", function(e){
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        target.scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+
 });
-}
 
-/* filter */
-function filterProjects(type){
-if(type==="all"){
-renderProjects(projects);
-}else{
-renderProjects(projects.filter(p=>p.type===type));
-}
-}
 
-/* initial load */
-renderProjects(projects);
+/* =========================
+   ACTIVE NAV HIGHLIGHT
+========================= */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+
+        if(scrollY >= sectionTop - 150){
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+    });
+
+});
