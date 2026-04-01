@@ -1,61 +1,171 @@
-body{
+
+/* RESET */
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial;
+}
+
+/* BODY */
+body{
 background:#0f172a;
 color:white;
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+background:#020617;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin:0 15px;
+}
+
+nav a{
+text-decoration:none;
+color:#38bdf8;
+}
+
+/* HERO */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:80px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.btn{
+padding:10px 20px;
+border:1px solid #38bdf8;
+color:#38bdf8;
+text-decoration:none;
+}
+
+/* SECTION */
+.section{
+padding:80px 40px;
+}
+
+.section-title{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+/* ABOUT */
+.about-container{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+}
+
+.about-card{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.stat{
+background:#1e293b;
+padding:15px;
+border-radius:10px;
 text-align:center;
 }
 
-/* header */
-header{
-display:flex;
-justify-content:space-between;
-padding:20px;
-background:#020617;
+/* SKILLS */
+.skills-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:20px;
 }
 
-/* hero */
-.hero{
-height:80vh;
+.skill-box{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+}
+
+.skill-box li{
+list-style:none;
+margin:5px 0;
+}
+
+/* EDUCATION */
+.edu-card{
+background:#1e293b;
+padding:20px;
+margin-top:20px;
+border-radius:10px;
+}
+
+/* PROJECTS */
+.projects-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.project-card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-5px);
+background:#334155;
+}
+
+/* EXPERIENCE */
+.experience-card{
+background:#1e293b;
+padding:20px;
+margin-top:20px;
+border-radius:10px;
+}
+
+/* CONTACT */
+.contact-buttons{
 display:flex;
 flex-direction:column;
-justify-content:center;
-align-items:center;
+gap:10px;
+margin-top:20px;
 }
 
-/* skills */
-.skill{
-margin:20px;
-}
-
-.bar{
+.contact-btn{
 background:#1e293b;
-height:10px;
-width:300px;
-margin:auto;
+padding:10px;
+text-decoration:none;
+color:white;
+border-radius:8px;
 }
 
-.progress{
-background:#38bdf8;
-height:10px;
-}
-
-/* cards */
-.card{
-background:#1e293b;
-margin:10px auto;
-padding:15px;
-width:250px;
-}
-
-/* fade */
-.fade{
+/* ANIMATION */
+.hidden{
 opacity:0;
 transform:translateY(40px);
 transition:1s;
 }
 
-.fade.show{
+.show{
 opacity:1;
 transform:translateY(0);
 }
