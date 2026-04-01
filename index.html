@@ -9,133 +9,217 @@
 
 <body>
 
-<header>
-<h1>Nandhitha</h1>
+<!-- NAV -->
 <nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#internships">Internships</a>
-<a href="#certifications">Certifications</a>
-<a href="#contact">Contact</a>
+<h2>NM.</h2>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
-</header>
 
 <!-- HERO -->
 <section class="hero">
-<h2 id="typing"></h2>
-<p class="role">Aspiring Software Developer</p>
+<div class="hero-text">
+<h1>
+Hi, I'm <br>
+<span id="typing-text"></span>
+</h1>
 
-<div class="links">
-<a href="https://github.com/NandhithaMilkuri" target="_blank">GitHub</a>
-<a href="https://www.linkedin.com/in/nandhitha-milkuri" target="_blank">LinkedIn</a>
+<p>
+Aspiring Software Developer focused on building real-world applications.
+</p>
 </div>
+
+<a href="JPMC_Resume_Final.pdf" class="btn" download>Download Resume</a>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="fade">
-<h2>About</h2>
+<section id="about" class="section">
+<p class="section-title">ABOUT</p>
+
+<div class="about-container">
+
+<div class="about-text">
+<h2>Building real-world applications with strong fundamentals.</h2>
 <p>
 Aspiring Software Developer with strong foundations in Python, Java, Web Development, and Database Management.
 </p>
+</div>
+
+<div class="about-card">
+<div class="stat"><span>Projects</span><h3>4+</h3></div>
+<div class="stat"><span>Internships</span><h3>3</h3></div>
+<div class="stat"><span>Certifications</span><h3>5+</h3></div>
+</div>
+
+</div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="fade">
-<h2>Skills</h2>
+<section id="skills" class="section">
+<p class="section-title">SKILLS</p>
+<h2>Technologies I work with</h2>
 
-<div class="skill">
-<p>Java</p>
-<div class="bar"><div class="progress" style="width:85%"></div></div>
+<div class="skills-container">
+
+<div class="skill-box">
+<h3>Languages</h3>
+<li>Java</li>
+<li>Python</li>
+<li>JavaScript</li>
+<li>HTML</li>
+<li>CSS</li>
 </div>
 
-<div class="skill">
-<p>Python</p>
-<div class="bar"><div class="progress" style="width:85%"></div></div>
+<div class="skill-box">
+<h3>Core</h3>
+<li>DSA</li>
+<li>OOP</li>
+<li>DBMS</li>
+<li>Operating Systems</li>
 </div>
 
-<div class="skill">
-<p>HTML</p>
-<div class="bar"><div class="progress" style="width:90%"></div></div>
+<div class="skill-box">
+<h3>Databases</h3>
+<li>MySQL</li>
+<li>MongoDB</li>
 </div>
 
-<div class="skill">
-<p>CSS</p>
-<div class="bar"><div class="progress" style="width:85%"></div></div>
+<div class="skill-box">
+<h3>Tools</h3>
+<li>Git</li>
+<li>GitHub</li>
+<li>Docker</li>
 </div>
 
-<div class="skill">
-<p>JavaScript</p>
-<div class="bar"><div class="progress" style="width:80%"></div></div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+<p class="section-title">EDUCATION</p>
+<h2>Academic journey</h2>
+
+<div class="edu-card">
+<h3>B.Tech - Computer Science</h3>
+<p>2023 — 2027</p>
 </div>
 
 </section>
 
-<!-- PROJECT FILTER -->
-<section id="projects" class="fade">
-<h2>Projects</h2>
+<!-- PROJECTS -->
+<section id="projects" class="section">
+<p class="section-title">PROJECTS</p>
+<h2>Things I’ve built</h2>
 
-<button onclick="filterProjects('all')">All</button>
-<button onclick="filterProjects('web')">Web</button>
-<button onclick="filterProjects('ml')">ML</button>
+<div class="projects-container">
 
-<div id="project-container"></div>
+<div class="project-card">
+<h3>AgroConnect Management System</h3>
+<p>Role-based system for task assignment and monitoring agricultural data.</p>
+<span>Python, DBMS</span>
+</div>
 
+<div class="project-card">
+<h3>Elevate Estates</h3>
+<p>Responsive real estate website using HTML, CSS, JavaScript.</p>
+<span>HTML, CSS, JS</span>
+</div>
+
+<div class="project-card">
+<h3>Expense Tracker</h3>
+<p>Application to track daily expenses.</p>
+<span>Python</span>
+</div>
+
+<div class="project-card">
+<h3>Fake News Detection using ML</h3>
+<p>Machine learning model to classify news as real or fake.</p>
+<span>Python, ML</span>
+</div>
+
+</div>
 </section>
 
-<!-- INTERNSHIPS -->
-<section id="internships" class="fade">
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+<p class="section-title">EXPERIENCE</p>
 <h2>Internships</h2>
-<div class="card">Data Science - Eduskills</div>
-<div class="card">SQL & DBMS - Eduskills</div>
-<div class="card">AI/ML - Eduskills</div>
-</section>
 
-<!-- CERTIFICATIONS -->
-<section id="certifications" class="fade">
-<h2>Certifications</h2>
-<div class="card">Azure AI Fundamentals</div>
-<div class="card">Data Science Bootcamp</div>
-<div class="card">Full Stack Bootcamp</div>
+<div class="experience-card">
+<h3>Data Science Internship - Eduskills</h3>
+<p>Data analysis, visualization, preprocessing.</p>
+</div>
+
+<div class="experience-card">
+<h3>SQL & DBMS Internship - Eduskills</h3>
+<p>Database design, joins, normalization.</p>
+</div>
+
+<div class="experience-card">
+<h3>AI-ML Internship - Eduskills</h3>
+<p>Built ML models and prediction systems.</p>
+</div>
+
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="fade">
-<h2>Contact</h2>
-<p>Email: milkurinandhitha@gmail.com</p>
+<section id="contact" class="section">
+<p class="section-title">CONTACT</p>
+
+<h2>Let’s connect</h2>
+
+<div class="contact-buttons">
+
+<a href="mailto:milkurinandhitha@gmail.com" class="contact-btn">
+Email
+</a>
+
+<a href="https://github.com/NandhithaMilkuri" target="_blank" class="contact-btn">
+GitHub
+</a>
+
+<a href="https://www.linkedin.com/in/nandhitha-milkuri" target="_blank" class="contact-btn">
+LinkedIn
+</a>
+
+</div>
 </section>
 
-<script src="script.js"></script>
+<script>
 
-</body>
-</html>
+/* TYPING */
+const text="Nandhitha";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typing-text").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,100);
+}}
+type();
 
+/* SCROLL ANIMATION */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
 
-</section>
+document.querySelectorAll('.section').forEach(el=>{
+el.classList.add('hidden');
+observer.observe(el);
+});
 
-<!-- INTERNSHIPS -->
-<section id="internships" class="fade">
-<h2>Internships</h2>
-<div class="card">Data Science - Eduskills</div>
-<div class="card">SQL & DBMS - Eduskills</div>
-<div class="card">AI/ML - Eduskills</div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications" class="fade">
-<h2>Certifications</h2>
-<div class="card">Azure AI Fundamentals</div>
-<div class="card">Data Science Bootcamp</div>
-<div class="card">Full Stack Bootcamp</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="fade">
-<h2>Contact</h2>
-<p>Email: milkurinandhitha@gmail.com</p>
-</section>
-
-<script src="script.js"></script>
+</script>
 
 </body>
 </html>
