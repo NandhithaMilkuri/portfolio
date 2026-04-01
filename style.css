@@ -1,15 +1,12 @@
-
-/* RESET */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:'Segoe UI',sans-serif;
 }
 
-/* BODY */
 body{
-background:#0f172a;
+background:#050816;
 color:white;
 }
 
@@ -17,25 +14,23 @@ color:white;
 nav{
 display:flex;
 justify-content:space-between;
-padding:20px 40px;
-background:#020617;
-position:sticky;
-top:0;
-z-index:100;
+padding:20px 60px;
+background:#050816;
 }
 
 nav ul{
 display:flex;
+gap:20px;
 list-style:none;
 }
 
-nav ul li{
-margin:0 15px;
+nav a{
+color:#aaa;
+text-decoration:none;
 }
 
-nav a{
-text-decoration:none;
-color:#38bdf8;
+nav a:hover{
+color:#4ea1ff;
 }
 
 /* HERO */
@@ -46,126 +41,221 @@ align-items:center;
 padding:80px;
 }
 
-.hero h1{
-font-size:40px;
+.hero-text h1{
+font-size:70px;
 }
 
+.hero-text span{
+color:#4ea1ff;
+}
+
+.hero-img img{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #4ea1ff;
+}
+
+/* BUTTON */
 .btn{
 padding:10px 20px;
-border:1px solid #38bdf8;
-color:#38bdf8;
+background:#3b82f6;
+border-radius:8px;
+color:white;
 text-decoration:none;
 }
 
 /* SECTION */
 .section{
-padding:80px 40px;
+padding:80px;
 }
 
-.section-title{
-color:#38bdf8;
-margin-bottom:10px;
-}
-
-/* ABOUT */
-.about-container{
-display:flex;
-justify-content:space-between;
-margin-top:20px;
-}
-
-.about-card{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-}
-
-.stat{
-background:#1e293b;
-padding:15px;
-border-radius:10px;
-text-align:center;
+h2{
+font-size:50px;
+color:#4ea1ff;
+margin-bottom:20px;
 }
 
 /* SKILLS */
 .skills-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+display:flex;
+flex-wrap:wrap;
 gap:20px;
-margin-top:20px;
 }
 
 .skill-box{
-background:#1e293b;
+background:#0c1220;
 padding:20px;
-border-radius:10px;
+border-radius:15px;
 }
 
 .skill-box li{
 list-style:none;
-margin:5px 0;
-}
-
-/* EDUCATION */
-.edu-card{
-background:#1e293b;
-padding:20px;
-margin-top:20px;
-border-radius:10px;
+color:#aaa;
 }
 
 /* PROJECTS */
 .projects-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+display:flex;
+flex-wrap:wrap;
 gap:20px;
-margin-top:20px;
 }
 
 .project-card{
-background:#1e293b;
+background:#0c1220;
 padding:20px;
-border-radius:10px;
-transition:0.3s;
+border-radius:15px;
+width:250px;
 }
 
-.project-card:hover{
-transform:translateY(-5px);
-background:#334155;
-}
-
-/* EXPERIENCE */
-.experience-card{
-background:#1e293b;
-padding:20px;
-margin-top:20px;
-border-radius:10px;
+.project-card a{
+color:#4ea1ff;
+display:block;
+margin-top:10px;
 }
 
 /* CONTACT */
 .contact-buttons{
 display:flex;
-flex-direction:column;
-gap:10px;
-margin-top:20px;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .contact-btn{
-background:#1e293b;
-padding:10px;
+padding:12px 20px;
+background:#0c1220;
+border-radius:30px;
 text-decoration:none;
 color:white;
+}*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#050816;
+color:white;
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+background:#050816;
+}
+
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+nav a{
+color:#aaa;
+text-decoration:none;
+}
+
+nav a:hover{
+color:#4ea1ff;
+}
+
+/* HERO */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:80px;
+}
+
+.hero-text h1{
+font-size:70px;
+}
+
+.hero-text span{
+color:#4ea1ff;
+}
+
+.hero-img img{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #4ea1ff;
+}
+
+/* BUTTON */
+.btn{
+padding:10px 20px;
+background:#3b82f6;
 border-radius:8px;
+color:white;
+text-decoration:none;
 }
 
-/* ANIMATION */
-.hidden{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
+/* SECTION */
+.section{
+padding:80px;
 }
 
-.show{
-opacity:1;
-transform:translateY(0);
+h2{
+font-size:50px;
+color:#4ea1ff;
+margin-bottom:20px;
+}
+
+/* SKILLS */
+.skills-container{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.skill-box{
+background:#0c1220;
+padding:20px;
+border-radius:15px;
+}
+
+.skill-box li{
+list-style:none;
+color:#aaa;
+}
+
+/* PROJECTS */
+.projects-container{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.project-card{
+background:#0c1220;
+padding:20px;
+border-radius:15px;
+width:250px;
+}
+
+.project-card a{
+color:#4ea1ff;
+display:block;
+margin-top:10px;
+}
+
+/* CONTACT */
+.contact-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.contact-btn{
+padding:12px 20px;
+background:#0c1220;
+border-radius:30px;
+text-decoration:none;
+color:white;
 }
