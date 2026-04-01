@@ -1,85 +1,100 @@
-/* Loader */
-window.addEventListener("load", function () {
-    document.body.classList.add("loaded");
+/* ================================
+   SCROLL REVEAL ANIMATION
+================================ */
+const sections = document.querySelectorAll(".hidden");
+
+window.addEventListener("scroll", () => {
+
+    sections.forEach((section) => {
+
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < window.innerHeight - 100) {
+            section.classList.add("show");
+        }
+
+    });
+
 });
 
-/* Mobile Menu */
-const toggleMenu = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
 
-toggleMenu.onclick = function () {
-    nav.classList.toggle("show");
-};
+/* ================================
+   SMOOTH SCROLL (NAV LINKS)
+================================ */
+const navLinks = document.querySelectorAll("nav a");
 
-/* Scroll */
-function scrollToProjects() {
-    document
-        .getElementById("projects")
-        .scrollIntoView({ behavior: "smooth" });
-}
+navLinks.forEach((link) => {
 
-/* Typing */
+    link.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        const targetId = link.getAttribute("href");
+
+        const targetSection = document.querySelector(targetId);
+
+        targetSection.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+
+/* ================================
+   ACTIVE NAV HIGHLIGHT
+================================ */
+const allSections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    allSections.forEach((section) => {
+
+        const sectionTop = section.offsetTop;
+
+        if (scrollY >= sectionTop - 150) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach((link) => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+
+/* ================================
+   TYPING ANIMATION (RESUME BASED)
+================================ */
 const text = "Aspiring Software Developer";
 let index = 0;
 
-function typing() {
+function typingEffect() {
+
+    const typingElement = document.getElementById("typing");
+
+    if (!typingElement) return;
+
     if (index < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(index);
+
+        typingElement.innerHTML += text.charAt(index);
+
         index++;
-        setTimeout(typing, 50);
+
+        setTimeout(typingEffect, 50);
     }
+
 }
 
-typing();
-
-/* Fade */
-const faders = document.querySelectorAll(".fade");
-
-window.addEventListener("scroll", function () {
-    faders.forEach(function (el) {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-            el.classList.add("show");
-        }
-    });
-});
-
-/* Theme */
-const themeToggle = document.getElementById("theme-toggle");
-
-themeToggle.onclick = function () {
-    document.body.classList.toggle("light");
-};
-
-/* Particles */
-particlesJS("particles-js", {
-    particles: {
-        number: { value: 60 },
-        size: { value: 3 },
-        move: { speed: 1 },
-        line_linked: { enable: true }
-    }
-});
-
-/* GitHub Projects */
-fetch("https://api.github.com/users/NandhithaMilkuri/repos")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-
-        const container = document.getElementById("github-projects");
-
-        data.slice(0, 6).forEach(function (repo) {
-
-            const div = document.createElement("div");
-            div.className = "card";
-
-            div.innerHTML = `
-                <h3>${repo.name}</h3>
-                <p>${repo.description || "No description available"}</p>
-                <a href="${repo.html_url}" target="_blank">View Project</a>
-            `;
-
-            container.appendChild(div);
-        });
-    });
+typingEffect();
