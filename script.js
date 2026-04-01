@@ -1,55 +1,43 @@
+/* ======================
+   TYPING ANIMATION
+====================== */
+const text = "Hello, I'm Nandhitha 👋";
+let i = 0;
+
+function typing(){
+if(i < text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typing, 50);
+}
+}
+
+typing();
 
 
+/* ======================
+   SCROLL FADE
+====================== */
+const faders = document.querySelectorAll(".fade");
 
-/* =========================
-   SMOOTH SCROLL NAVIGATION
-========================= */
-const links = document.querySelectorAll("nav a");
-
-links.forEach(function(link) {
-
-    link.addEventListener("click", function(e) {
-
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        target.scrollIntoView({
-            behavior: "smooth"
-        });
-
-    });
-
+window.addEventListener("scroll", function(){
+faders.forEach(function(el){
+if(el.getBoundingClientRect().top < window.innerHeight - 100){
+el.classList.add("show");
+}
+});
 });
 
 
-/* =========================
-   ACTIVE NAV HIGHLIGHT
-========================= */
-window.addEventListener("scroll", function() {
+/* ======================
+   SMOOTH SCROLL
+====================== */
+const links = document.querySelectorAll("nav a");
 
-    let current = "";
-
-    const sections = document.querySelectorAll("section");
-
-    sections.forEach(function(section) {
-
-        const sectionTop = section.offsetTop;
-
-        if (scrollY >= sectionTop - 100) {
-            current = section.getAttribute("id");
-        }
-
-    });
-
-    links.forEach(function(link) {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-
-    });
-
+links.forEach(function(link){
+link.addEventListener("click", function(e){
+e.preventDefault();
+document.querySelector(this.getAttribute("href"))
+.scrollIntoView({behavior:"smooth"});
+});
 });
