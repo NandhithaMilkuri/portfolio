@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nandhitha | Portfolio</title>
+<title>Nandhitha Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,6 +15,7 @@
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
+<a href="#internships">Internships</a>
 <a href="#certifications">Certifications</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -29,8 +30,6 @@
 <a href="https://github.com/NandhithaMilkuri" target="_blank">GitHub</a>
 <a href="https://www.linkedin.com/in/nandhitha-milkuri" target="_blank">LinkedIn</a>
 </div>
-
-<a href="JPMC_Resume_Final.pdf" download class="btn">Download Resume</a>
 </section>
 
 <!-- ABOUT -->
@@ -45,32 +44,59 @@ Aspiring Software Developer with strong foundations in Python, Java, Web Develop
 <section id="skills" class="fade">
 <h2>Skills</h2>
 
-<div class="skills">
-<span>Java</span>
-<span>Python</span>
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>MySQL</span>
+<div class="skill">
+<p>Java</p>
+<div class="bar"><div class="progress" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<p>Python</p>
+<div class="bar"><div class="progress" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<p>HTML</p>
+<div class="bar"><div class="progress" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="bar"><div class="progress" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<p>JavaScript</p>
+<div class="bar"><div class="progress" style="width:80%"></div></div>
 </div>
 
 </section>
 
-<!-- PROJECTS (LIVE GITHUB) -->
+<!-- PROJECT FILTER -->
 <section id="projects" class="fade">
 <h2>Projects</h2>
-<div id="github-projects" class="projects"></div>
+
+<button onclick="filterProjects('all')">All</button>
+<button onclick="filterProjects('web')">Web</button>
+<button onclick="filterProjects('ml')">ML</button>
+
+<div id="project-container"></div>
+
+</section>
+
+<!-- INTERNSHIPS -->
+<section id="internships" class="fade">
+<h2>Internships</h2>
+<div class="card">Data Science - Eduskills</div>
+<div class="card">SQL & DBMS - Eduskills</div>
+<div class="card">AI/ML - Eduskills</div>
 </section>
 
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="fade">
 <h2>Certifications</h2>
-
-<div class="card">Azure AI Fundamentals (AI-900)</div>
-<div class="card">Data Science Bootcamp - GeeksforGeeks</div>
-<div class="card">Full Stack Developer Bootcamp</div>
-<div class="card">Smart India Hackathon</div>
-
+<div class="card">Azure AI Fundamentals</div>
+<div class="card">Data Science Bootcamp</div>
+<div class="card">Full Stack Bootcamp</div>
 </section>
 
 <!-- CONTACT -->
@@ -79,10 +105,117 @@ Aspiring Software Developer with strong foundations in Python, Java, Web Develop
 <p>Email: milkurinandhitha@gmail.com</p>
 </section>
 
-<footer>
-<p>© 2026 Nandhitha</p>
-</footer>
+<script src="script.js"></script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nandhitha Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Nandhitha</h1>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#internships">Internships</a>
+<a href="#certifications">Certifications</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h2 id="typing"></h2>
+<p class="role">Aspiring Software Developer</p>
+
+<div class="links">
+<a href="https://github.com/NandhithaMilkuri" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/nandhitha-milkuri" target="_blank">LinkedIn</a>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
+<h2>About</h2>
+<p>
+Aspiring Software Developer with strong foundations in Python, Java, Web Development, and Database Management.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade">
+<h2>Skills</h2>
+
+<div class="skill">
+<p>Java</p>
+<div class="bar"><div class="progress" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<p>Python</p>
+<div class="bar"><div class="progress" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<p>HTML</p>
+<div class="bar"><div class="progress" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="bar"><div class="progress" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<p>JavaScript</p>
+<div class="bar"><div class="progress" style="width:80%"></div></div>
+</div>
+
+</section>
+
+<!-- PROJECT FILTER -->
+<section id="projects" class="fade">
+<h2>Projects</h2>
+
+<button onclick="filterProjects('all')">All</button>
+<button onclick="filterProjects('web')">Web</button>
+<button onclick="filterProjects('ml')">ML</button>
+
+<div id="project-container"></div>
+
+</section>
+
+<!-- INTERNSHIPS -->
+<section id="internships" class="fade">
+<h2>Internships</h2>
+<div class="card">Data Science - Eduskills</div>
+<div class="card">SQL & DBMS - Eduskills</div>
+<div class="card">AI/ML - Eduskills</div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="fade">
+<h2>Certifications</h2>
+<div class="card">Azure AI Fundamentals</div>
+<div class="card">Data Science Bootcamp</div>
+<div class="card">Full Stack Bootcamp</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade">
+<h2>Contact</h2>
+<p>Email: milkurinandhitha@gmail.com</p>
+</section>
 
 <script src="script.js"></script>
+
 </body>
 </html>
