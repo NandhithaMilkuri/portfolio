@@ -5,40 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nandhitha Portfolio</title>
 
-<!-- Icons -->
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-body{margin:0;font-family:sans-serif;background:#020617;color:#fff;scroll-behavior:smooth}
-header{display:flex;justify-content:space-between;padding:15px 40px;background:#020617;position:sticky;top:0}
-nav a{margin:10px;color:#fff;text-decoration:none;position:relative}
-nav a::after{content:'';position:absolute;width:0;height:2px;background:#38bdf8;left:0;bottom:-5px;transition:0.3s}
-nav a:hover::after{width:100%}
-
-section{padding:60px 40px}
-h2{color:#38bdf8}
-
-#hero{text-align:center;padding:100px 20px}
-#hero h1{font-size:40px}
-#hero p{opacity:0.8}
-
-.btn{background:#38bdf8;color:#000;padding:10px 20px;border-radius:5px;text-decoration:none}
-
-.card{background:#1e293b;padding:20px;margin:15px 0;border-radius:10px;transition:0.3s}
-.card:hover{transform:translateY(-5px);box-shadow:0 0 15px #38bdf8}
-
-.grid{display:flex;flex-wrap:wrap;gap:20px}
-.grid .card{flex:1;min-width:250px}
-
-.contact a{color:#38bdf8;text-decoration:none}
-
-.fade{opacity:0;transform:translateY(20px);transition:1s}
-.fade.show{opacity:1;transform:translateY(0)}
-
-footer{text-align:center;padding:20px;background:#020617}
-</style>
 </head>
-
 <body>
 
 <header>
@@ -47,79 +17,125 @@ footer{text-align:center;padding:20px;background:#020617}
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
+<a href="#certifications">Certificates</a>
 <a href="#education">Education</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
 <section id="hero" class="fade">
+<div class="hero">
+
+<div class="left">
 <h1>Hi, I'm Nandhitha</h1>
-<p>Aspiring Software Developer & Data Analyst</p>
-<a href="#" class="btn">Download Resume</a>
+<h3 id="typing"></h3>
+<p>Building applications and extracting insights from data.</p>
+
+<a href="resume.pdf" download class="btn">
+<i class="fa fa-download"></i> Download Resume
+</a>
+</div>
+
+<div class="right">
+<img src="profile.jpg">
+</div>
+
+</div>
 </section>
 
 <section id="about" class="fade">
-<h2><i class="fa fa-user"></i> About</h2>
-<p>Aspiring Software Developer with strong foundations in Python, Java, Web Development and DBMS. Passionate about building applications and solving real-world problems.</p>
+<h2>About</h2>
+<p>
+Aspiring Software Developer skilled in Python, Java, Web Development and DBMS.
+Focused on building scalable and efficient solutions.
+</p>
 </section>
 
 <section id="skills" class="fade">
-<h2><i class="fa fa-code"></i> Skills</h2>
-<div class="grid">
-<div class="card">Java</div>
-<div class="card">Python</div>
-<div class="card">JavaScript</div>
-<div class="card">HTML & CSS</div>
-<div class="card">DBMS</div>
-<div class="card">MySQL</div>
+<h2>Skills</h2>
+
+<div class="skills-container">
+
+<div class="skill-box">
+<h3>Languages</h3>
+<p>Java • Python • C • JavaScript</p>
+</div>
+
+<div class="skill-box">
+<h3>Web</h3>
+<p>HTML • CSS</p>
+</div>
+
+<div class="skill-box">
+<h3>Core</h3>
+<p>DSA • OOP • OS • DBMS</p>
+</div>
+
+<div class="skill-box">
+<h3>Database</h3>
+<p>MySQL • SQL</p>
+</div>
+
 </div>
 </section>
 
 <section id="projects" class="fade">
-<h2><i class="fa fa-laptop-code"></i> Projects</h2>
+<h2>Projects</h2>
 
 <div class="card">
-<h3>Elevate Estates</h3>
-<p>Frontend real estate website using HTML, CSS, JS.</p>
+<h3>AgriFlow Management System</h3>
+<p>A smart agriculture system to manage crop data and improve productivity.</p>
+<a href="https://github.com/NandhithaMilkuri" target="_blank" class="btn small">
+<i class="fa-brands fa-github"></i> View Code
+</a>
 </div>
 
 <div class="card">
 <h3>Expense Tracker</h3>
-<p>Python app to track and manage expenses.</p>
+<p>Python application to manage daily expenses.</p>
+<a href="https://github.com/NandhithaMilkuri" target="_blank" class="btn small">
+<i class="fa-brands fa-github"></i> View Code
+</a>
 </div>
 
 <div class="card">
-<h3>To Do List</h3>
-<p>Task management system using Python.</p>
+<h3>Fake News Detection</h3>
+<p>NLP model using TF-IDF and Logistic Regression to detect fake news.</p>
+<a href="https://github.com/NandhithaMilkuri" target="_blank" class="btn small">
+<i class="fa-brands fa-github"></i> View Code
+</a>
 </div>
 
 </section>
 
+<section id="certifications" class="fade">
+<h2>Certificates</h2>
+
+<div class="card">Kaggle - Data Vision</div>
+<div class="card">Google AIML - Eduskills</div>
+<div class="card">Data Science Internship</div>
+<div class="card">Android Developer</div>
+<div class="card">Python Programming</div>
+
+</section>
+
 <section id="education" class="fade">
-<h2><i class="fa fa-graduation-cap"></i> Education</h2>
+<h2>Education</h2>
 
 <div class="card">
 <h3>B.Tech</h3>
 <p>Your College Name</p>
-<span>2021 - 2025</span>
 </div>
 
 <div class="card">
 <h3>Intermediate</h3>
 <p>Your Junior College</p>
-<span>2019 - 2021</span>
-</div>
-
-<div class="card">
-<h3>SSC</h3>
-<p>Your School Name</p>
-<span>2018 - 2019</span>
 </div>
 
 </section>
 
-<section id="contact" class="fade contact">
-<h2><i class="fa fa-envelope"></i> Contact</h2>
+<section id="contact" class="fade">
+<h2>Contact</h2>
 
 <p><i class="fa fa-envelope"></i> yourmail@gmail.com</p>
 
@@ -139,15 +155,7 @@ footer{text-align:center;padding:20px;background:#020617}
 <p>© 2026 Nandhitha</p>
 </footer>
 
-<script>
-const f=document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-f.forEach(e=>{
-const top=e.getBoundingClientRect().top;
-if(top<window.innerHeight-100){e.classList.add('show')}
-})
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
