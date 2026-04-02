@@ -1,11 +1,12 @@
-const text="Nandhitha";
+const text="Hello, I'm Milkuri Nandhitha";
 let i=0;
 
-function animate(){
+function type(){
 if(i<text.length){
 document.getElementById("name").innerHTML+=text.charAt(i);
 i++;
-setTimeout(animate,100);
+setTimeout(type,80);
 }
 }
-animate();
+
+type();
