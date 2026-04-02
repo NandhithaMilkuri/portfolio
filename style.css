@@ -113,6 +113,15 @@ transform:scale(1.05);
 background:#0ea5e9;
 }
 
+#contact a{
+color:#38bdf8;
+text-decoration:none;
+}
+
+#contact a:hover{
+text-decoration:underline;
+}
+
 /* ANIMATIONS */
 @keyframes fadeIn{
 from{
