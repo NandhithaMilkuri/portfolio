@@ -1,11 +1,3 @@
-// smooth scroll
-document.querySelectorAll('nav a').forEach(link=>{
-link.addEventListener('click',function(e){
-e.preventDefault();
-document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-});
-});
-
 // typing
 const text="Aspiring Software Developer & Data Analyst";
 let i=0;
@@ -18,14 +10,17 @@ setTimeout(type,40);
 }
 type();
 
-// reveal animation (SAFE)
+// reveal animation FIXED
 const reveals=document.querySelectorAll('.reveal');
+
 function reveal(){
 reveals.forEach(el=>{
-if(el.getBoundingClientRect().top<window.innerHeight-100){
+const top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-80){
 el.classList.add('active');
 }
 });
 }
+
 window.addEventListener('scroll',reveal);
-reveal();
+window.addEventListener('load',reveal);
