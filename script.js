@@ -11,6 +11,7 @@ type();
 
 /* SCROLL ANIMATION */
 const elements=document.querySelectorAll(".hidden");
+
 window.addEventListener("scroll",()=>{
 elements.forEach(el=>{
 if(el.getBoundingClientRect().top<window.innerHeight-100){
