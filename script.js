@@ -1,30 +1,46 @@
-/* TYPING */
-const text="Nandhitha";
-let i=0;
-function type(){
-if(i<text.length){
-document.getElementById("typing-text").innerHTML+=text.charAt(i);
-i++;
-setTimeout(type,100);
-}}
-type();
+// smooth nav
+document.querySelectorAll('nav a').forEach(link=>{
+link.addEventListener('click',function(e){
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+});
+});
 
-/* SCROLL ANIMATION */
-const elements=document.querySelectorAll(".hidden");
-
-window.addEventListener("scroll",()=>{
+// animation
+const elements=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
 elements.forEach(el=>{
 if(el.getBoundingClientRect().top<window.innerHeight-100){
-el.classList.add("show");
+el.classList.add('show');
 }
 });
 });
 
-/* SMOOTH SCROLL */
-document.querySelectorAll("nav a").forEach(link=>{
-link.addEventListener("click",e=>{
-e.preventDefault();
-document.querySelector(link.getAttribute("href"))
-.scrollIntoView({behavior:"smooth"});
+// typing effect
+const text="Aspiring Software Developer & Data Analyst";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+type();
+
+// nav highlight
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+let current="";
+sections.forEach(sec=>{
+if(scrollY>=sec.offsetTop-150){
+current=sec.id;
+}
+});
+document.querySelectorAll("nav a").forEach(a=>{
+a.classList.remove("active");
+if(a.getAttribute("href")==="#"+current){
+a.classList.add("active");
+}
 });
 });
