@@ -1,6 +1,8 @@
-body{margin:0;font-family:'Segoe UI',sans-serif;background:#020617;color:#fff}
-header{display:flex;justify-content:space-between;padding:15px 40px;background:#020617;position:fixed;width:100%;z-index:100}
-nav a{margin:10px;color:#fff;text-decoration:none}
+body{margin:0;font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#020617,#0f172a);color:#fff}
+header{display:flex;justify-content:space-between;padding:15px 40px;background:rgba(2,6,23,0.9);position:fixed;width:100%;z-index:100}
+nav a{margin:10px;color:#fff;text-decoration:none;position:relative}
+nav a::after{content:'';position:absolute;width:0;height:2px;background:#38bdf8;left:0;bottom:-5px;transition:0.3s}
+nav a:hover::after{width:100%}
 
 section{padding:120px 40px}
 #hero{margin-top:60px}
@@ -10,14 +12,20 @@ section{padding:120px 40px}
 
 h2{color:#38bdf8}
 
+/* skills */
 .skills-container{display:flex;flex-wrap:wrap;gap:20px}
-.skill-box{background:#1e293b;padding:20px;border-radius:10px;flex:1;min-width:200px;transition:0.3s}
+.skill-box{background:rgba(30,41,59,0.7);padding:20px;border-radius:12px;flex:1;min-width:200px;transition:0.3s}
 .skill-box:hover{transform:scale(1.05);box-shadow:0 0 20px #38bdf8}
 
-.card{background:#1e293b;padding:20px;border-radius:10px;margin:15px 0;transition:0.3s}
+/* cards */
+.card{background:rgba(30,41,59,0.7);padding:20px;border-radius:12px;margin:15px 0;transition:0.3s}
 .card:hover{transform:translateY(-5px);box-shadow:0 0 20px #38bdf8}
 
 .btn{background:#38bdf8;color:#000;padding:10px 15px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:10px}
 .btn:hover{transform:scale(1.05)}
+
+/* animation safe */
+.reveal{opacity:0;transform:translateY(40px);transition:1s}
+.reveal.active{opacity:1;transform:translateY(0)}
 
 html{scroll-behavior:smooth}
