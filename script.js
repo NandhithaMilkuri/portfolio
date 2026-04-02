@@ -1,26 +1,12 @@
-// typing
-const text="Aspiring Software Developer & Data Analyst";
+const text="Nandhitha";
 let i=0;
-function type(){
+
+function animate(){
 if(i<text.length){
-document.getElementById("typing").innerHTML+=text.charAt(i);
+document.getElementById("name").innerHTML+=text.charAt(i);
 i++;
-setTimeout(type,40);
+setTimeout(animate,100);
 }
-}
-type();
-
-// reveal animation FIXED
-const reveals=document.querySelectorAll('.reveal');
-
-function reveal(){
-reveals.forEach(el=>{
-const top=el.getBoundingClientRect().top;
-if(top<window.innerHeight-80){
-el.classList.add('active');
-}
-});
 }
 
-window.addEventListener('scroll',reveal);
-window.addEventListener('load',reveal);
+animate();
