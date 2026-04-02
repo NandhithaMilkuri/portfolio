@@ -8,5 +8,4 @@ i++;
 setTimeout(animate,100);
 }
 }
-
 animate();
