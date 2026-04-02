@@ -6,7 +6,7 @@ document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smoo
 });
 });
 
-// typing effect
+// typing
 const text="Aspiring Software Developer & Data Analyst";
 let i=0;
 function type(){
@@ -17,3 +17,15 @@ setTimeout(type,40);
 }
 }
 type();
+
+// reveal animation (SAFE)
+const reveals=document.querySelectorAll('.reveal');
+function reveal(){
+reveals.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-100){
+el.classList.add('active');
+}
+});
+}
+window.addEventListener('scroll',reveal);
+reveal();
